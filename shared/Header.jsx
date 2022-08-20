@@ -47,8 +47,17 @@ export const Header = () => {
     >
       <Link href='/' passHref>
         <Flex alignItems='center' cursor='pointer'>
-          <Image src='/assets/logos/swords.webp' alt='logo' w='50px' />
-          <Text color='red' fontFamily='uncial' fontSize='1.5rem' ml='5px'>
+          <Image
+            src='/assets/logos/swords.webp'
+            alt='logo'
+            w={{ lg: '50px', sm: '25px' }}
+          />
+          <Text
+            color='red'
+            fontFamily='uncial'
+            fontSize={{ lg: '1.5rem', sm: '1rem' }}
+            ml='5px'
+          >
             Rite of Moloch
           </Text>
         </Flex>
@@ -78,7 +87,7 @@ export const Header = () => {
                 _hover={{ opacity: '0.8' }}
                 p={{ base: 0, md: 3 }}
               >
-                <Text px={2} display={{ base: 'none', md: 'flex' }} color='red'>
+                <Text px={2} display={{ md: 'flex' }} color='red'>
                   {getAccountString(context.signerAddress)}
                 </Text>
               </Button>

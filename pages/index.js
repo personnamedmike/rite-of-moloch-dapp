@@ -198,17 +198,18 @@ export default function Home() {
   return (
     <Flex
       minH='350px'
-      w='500px'
+      minW='80%'
       direction='column'
       alignItems='center'
       fontFamily='spaceMono'
+      px='2rem'
     >
       <Text
         w='100%'
         bg='purple'
         p='15px'
         fontFamily='rubik'
-        fontSize='1.2rem'
+        fontSize={{ lg: '1.2rem', sm: '1rem' }}
         mb='2rem'
         textAlign='center'
       >
@@ -240,7 +241,11 @@ export default function Home() {
                   alt='Rite Token'
                 />
 
-                <Text color='red' fontSize='1.2rem' mb='5px'>
+                <Text
+                  color='red'
+                  fontSize={{ lg: '1.2rem', sm: '1rem' }}
+                  mb='5px'
+                >
                   You own a stake for {Number(riteBalance)} RITE
                 </Text>
                 <Text color='white' fontFamily='jetbrains' fontSize='.8rem'>
@@ -255,10 +260,10 @@ export default function Home() {
                 p='15px'
               >
                 <StyledHStack mb='1rem'>
-                  <Text color='red' fontSize='1.2rem'>
+                  <Text color='red' fontSize={{ lg: '1.2rem', sm: '.8rem' }}>
                     Required Stake
                   </Text>
-                  <Text color='white' fontSize='1.2rem'>
+                  <Text color='white' fontSize={{ lg: '1.2rem', sm: '.8rem' }}>
                     {utils.formatUnits(minimumStake, 'ether')} RAID
                   </Text>
                 </StyledHStack>
