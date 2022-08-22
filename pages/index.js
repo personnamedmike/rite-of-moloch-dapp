@@ -24,7 +24,7 @@ import {
 } from '../utils/web3';
 
 import { AppContext } from '../context/AppContext';
-import { CONTRACT_ADDRESSES } from '../utils/constants';
+import { CONTRACT_ADDRESSES, TOKEN_TICKER } from '../utils/constants';
 import { SUPPORTED_NETWORK_IDS } from '../config';
 
 const StyledButton = styled(Button)`
@@ -264,23 +264,26 @@ export default function Home() {
                     Required Stake
                   </Text>
                   <Text color='white' fontSize={{ lg: '1.2rem', sm: '.8rem' }}>
-                    {utils.formatUnits(minimumStake, 'ether')} RAID
+                    {utils.formatUnits(minimumStake, 'ether')}{' '}
+                    {TOKEN_TICKER[context.chainId]}
                   </Text>
                 </StyledHStack>
                 <StyledHStack>
                   <Text color='red' fontFamily='jetbrains' fontSize='.8rem'>
-                    Your RAID balance
+                    Your {TOKEN_TICKER[context.chainId]} balance
                   </Text>
                   <Text color='white' fontSize='.8rem'>
-                    {utils.formatUnits(raidBalance, 'ether')} RAID
+                    {utils.formatUnits(raidBalance, 'ether')}{' '}
+                    {TOKEN_TICKER[context.chainId]}
                   </Text>
                 </StyledHStack>
                 <StyledHStack>
                   <Text color='red' fontFamily='jetbrains' fontSize='.8rem'>
-                    Your RAID allowance
+                    Your {TOKEN_TICKER[context.chainId]} allowance
                   </Text>
                   <Text color='white' fontSize='.8rem'>
-                    {utils.formatUnits(allowance, 'ether')} RAID
+                    {utils.formatUnits(allowance, 'ether')}{' '}
+                    {TOKEN_TICKER[context.chainId]}
                   </Text>
                 </StyledHStack>
 

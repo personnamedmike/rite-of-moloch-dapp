@@ -7,11 +7,16 @@ export const SIGNATURE_MESSAGE =
 
 export const CONTRACT_ADDRESSES = {
   4: {
-    erc20TokenAddress: '0xb4B143d94E08D834050289baC462a0C52d4161BD',
-    riteOfMolochAddress: '0xf0aAE4D07c6dc4375f31dF83779B066e0362689F'
+    erc20TokenAddress: '0x50589c90DA71600B06fCcDe89c79469aFe12ea65',
+    riteOfMolochAddress: '0x35e02D20B12E7002B1B8c13D35Eb59d8FC383d7b'
   },
   100: {
     erc20TokenAddress: '',
     riteOfMolochAddress: ''
   }
+};
+
+export const TOKEN_TICKER = {
+  4: 'mRAID',
+  100: 'RAID'
 };
