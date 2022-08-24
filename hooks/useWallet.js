@@ -13,10 +13,9 @@ const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
-      // infuraId: INFURA_ID,
-    },
-    rpc: {
-      100: "https://dai.poa.network",
+      rpc: {
+        100: "ttps://rpc.gnosischain.com",
+      },
     },
   },
 };
@@ -32,7 +31,6 @@ export const useWallet = () => {
       await ethersProvider.getSigner().getAddress()
     ).toLowerCase();
     const chainId = Number(modalProvider.chainId);
-    console.log(modalProvider);
 
     await ethersProvider.getSigner().signMessage(SIGNATURE_MESSAGE);
 
