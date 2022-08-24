@@ -191,7 +191,7 @@ export default function Home() {
 
   useEffect(() => {
     if (context.chainId in SUPPORTED_NETWORK_IDS) {
-      // initialFetch();
+      initialFetch();
     }
   }, [context.chainId]);
 

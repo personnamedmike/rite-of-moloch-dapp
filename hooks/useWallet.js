@@ -14,7 +14,7 @@ const providerOptions = {
     package: WalletConnectProvider,
     options: {
       rpc: {
-        100: "ttps://rpc.gnosischain.com",
+        100: "https://rpc.gnosischain.com",
       },
     },
   },
