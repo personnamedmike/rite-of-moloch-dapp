@@ -1,21 +1,21 @@
-import { useContext, useState } from 'react';
-import { providers } from 'ethers';
-import Web3 from 'web3';
-import Web3Modal from 'web3modal';
-import WalletConnectProvider from '@walletconnect/web3-provider';
+import { useContext, useState } from "react";
+import { providers } from "ethers";
+import Web3 from "web3";
+import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
 
-import { AppContext } from '../context/AppContext';
+import { AppContext } from "../context/AppContext";
 
-import { SIGNATURE_MESSAGE } from '../utils/constants';
-import { INFURA_ID } from '../config';
+import { SIGNATURE_MESSAGE } from "../utils/constants";
+import { INFURA_ID } from "../config";
 
 const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
-      infuraId: INFURA_ID
-    }
-  }
+      infuraId: INFURA_ID,
+    },
+  },
 };
 
 export const useWallet = () => {
@@ -36,7 +36,7 @@ export const useWallet = () => {
       ethersProvider,
       web3,
       signerAddress,
-      chainId
+      chainId,
     });
   };
 
@@ -47,9 +47,9 @@ export const useWallet = () => {
       setSignaturePending(true);
 
       web3Modal = new Web3Modal({
-        network: 'mainnet',
+        network: "mainnet",
         cacheProvider: true,
-        providerOptions
+        providerOptions,
       });
 
       web3Modal.clearCachedProvider();
@@ -58,16 +58,16 @@ export const useWallet = () => {
       await setWeb3Provider(modalProvider);
       setSignaturePending(false);
 
-      modalProvider.on('accountsChanged', async () => {
+      modalProvider.on("accountsChanged", async () => {
         window.location.reload();
       });
 
-      modalProvider.on('chainChanged', (_chainId) => {
+      modalProvider.on("chainChanged", (_chainId) => {
         const chainId = Number(_chainId);
         const ethersProvider = new providers.Web3Provider(modalProvider);
         context.setWeb3Data({
           chainId,
-          ethersProvider
+          ethersProvider,
         });
       });
     } catch (err) {
@@ -82,7 +82,7 @@ export const useWallet = () => {
       web3: null,
       signerAddress: null,
       signerEns: null,
-      chainId: null
+      chainId: null,
     });
   };
 
